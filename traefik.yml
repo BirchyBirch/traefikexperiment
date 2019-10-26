@@ -1,0 +1,20 @@
+entryPoints:
+  web-secure:
+    address: ':443'  
+  web:
+    address: ":80"
+  traefik: {}
+metrics:
+  prometheus: {}
+    
+api:
+  dashboard: true
+  
+providers:
+  file:
+    filename: "d:/traefik/dynamic-conf.yml"
+
+log:
+  level: DEBUG
+  filePath: d:/traefik/log.txt
+  format: json          

@@ -1,0 +1,18 @@
+http:
+  routers:
+    router0:
+      entryPoints:
+      - web
+      service: service-foo
+      rule: Host(`weatherstuff.localhost`)
+    api:
+      rule: Host(`traefik.localhost`)
+      service: api@internal
+
+  services:
+    service-foo:
+      loadBalancer:
+        servers:
+        - url: url to thing
+        passHostHeader: false
+        
